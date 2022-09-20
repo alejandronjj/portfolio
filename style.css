@@ -396,3 +396,15 @@ form textarea{
     width: 40px;
     height: 40px;
 }
+
+.copyright{
+    padding: 20px;
+    background: var(--main-color);
+    text-align: center;
+    color: #fff;
+}
+
+.copyright a{
+    color: rgb(33, 206, 140);
+
+}
