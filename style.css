@@ -25,6 +25,14 @@ body{
     color: var(--text-color);
 }
 
+/*Para activar modo oscuro*/
+body.active{
+
+    --bg-color:black;
+    --text-color: white;
+
+}
+
 section{
     padding: 50px 10%;
 }
@@ -33,6 +41,54 @@ section{
     color: var(--bg-color);
     background-color: var(--main-color);
 }
+/*---------------------------------Barra de navegación------------------*/
+header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 13px 10%;
+    transition: 0.2s;
+    box-shadow: -3x -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288)
+}
+
+.logo{
+    font-size: 1.61rem;
+    font-weight: 600;
+    color: var(--text-color);    
+}
+
+.navbar{
+    display: flex;
+
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.navbar a:hover{
+    color: var(--hover);
+}
+
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+#darkmode{
+    font-size: 22px;
+}
+
 
 /*-----------------------------------Sección principal--------------------------------------------------------*/
 .social{
@@ -332,17 +388,16 @@ section{
 .contact-form{
     display: grid;
     place-items: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .contact-form form{
     display: flex;
     flex-direction: column;
-    width:
-    650px;
+    width:650px;
 }
 
-form input, form textarea{
+form input, textarea{
     padding: 15px;
     border-radius: 0.5rem;
     width: 100%;
@@ -407,4 +462,153 @@ form textarea{
 .copyright a{
     color: rgb(33, 206, 140);
 
+}
+
+
+
+/*-------------Parte responsiva--------------------------*/
+@media (max-width: 991px){
+    header{
+        padding: 18px 4%;
+    }
+    header a{
+        font-size: 0.5rem;
+    }
+
+    section{
+        padding:  50px 4%;
+    }
+}
+
+@media (max-width: 768px){
+
+    :root{
+        --big-font:2.4rem;
+        --medium-font:1.2rem;
+        
+    }
+    header{
+        padding: 11px 4%;
+    }
+    header a{
+        font-size: 0.3rem;
+    }
+
+    #menu-icon{
+        display: initial;
+        color: var(--text-color);
+    }
+
+    header .navbar{
+        position: absolute;
+        top: -500px;
+        left: 0%;
+        right: 0%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        box-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+        transition: 0.2s ease;
+        text-align: center;
+    }
+
+    .navbar.active{
+        top:100%
+    }
+
+    .navbar a{
+        padding: 1.5rem;
+        display: block;
+        background: var(--bg-color);
+    }
+
+
+    section{
+        padding:  50px 4%;
+    }
+
+    #darkmode{
+        position: absolute;
+        top: 1.4rem;
+        right: 2rem;
+    }
+
+    .home{
+        grid-template-columns: 0.5fr 3fr;
+    }
+
+    .home-img{
+        order: initial;
+
+    }
+
+    .home-text{
+        grid-column: 1/3;
+        padding-left: 1.4rem;
+    }
+
+    .about-container{
+        grid-template-columns: 1fr;
+    }
+
+    .about-img{
+        display: flex;
+        justify-content: center;
+
+
+    }
+
+    .skills-container{
+        grid-template-columns: 1fr;
+    }
+
+    .skills-img{
+        padding-left: 0;
+        padding-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form form{
+        width: 300px;
+    }
+
+    .contact-button{
+        margin-bottom: 25%;
+    }
+    
+}
+
+@media (max-width:340px){
+    :root{
+        --big-font:1.7rem;
+        --medium-font:1.1rem;
+    }
+
+    .home-text span{
+
+        font-size: 1rem;
+
+    }
+
+    .home-text h2{
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .information .info-box span{
+        font-size: 1rem;
+    }
+
+    .portfolio-content{
+        grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    }
+
+    .contact-form form{
+        width: 300px;
+    }
+
+    .contact-button{
+        margin-left: 25%;
+    }
 }
