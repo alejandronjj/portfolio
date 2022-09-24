@@ -315,7 +315,7 @@ header{
     color: #fff;
 }
 
-.services-box .bx:hover{
+.services-box:hover .bx{
     color: #22cf91;
 }
 
@@ -346,7 +346,7 @@ header{
 }
 
 .education-box:hover{
-    background: rgb(32, 119, 206);
+    background: var(--main-color);
     color: #fff;
 }
 
@@ -354,7 +354,7 @@ header{
     color: var(--text-color);
 }
 
-.education-box a:hover{
+.education-box:hover a{
     color:#fff
 }
 
