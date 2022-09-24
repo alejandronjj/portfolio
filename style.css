@@ -346,7 +346,7 @@ header{
 }
 
 .education-box:hover{
-    background: var(--main-color);
+    background: rgb(32, 119, 206);
     color: #fff;
 }
 
